@@ -45,5 +45,21 @@ do
 		fi
 	done
 done
-echo "Array after soring in descending order : "
+echo "Array after sorting in descending order : "
 echo ${array[*]}
+
+for((i=0;i<${#array[*]};i++))
+do
+        for((j=$i+1;j<${#array[*]};j++))
+        do
+                if((${array[$i]}>${array[$j]}))
+                then
+                        temp=${array[$i]}
+                        array[$i]=${array[$j]}
+                        array[$j]=$temp
+                fi
+        done
+done
+echo "Array after sorting in ascending order : "
+echo ${array[*]}
+
