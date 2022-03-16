@@ -24,7 +24,11 @@ Computation["4"]=$c4
 
 echo "Computation result are stored in Dictionary"
 echo "Dictionary Values are :"
+array=()
 for index in ${!Computation[*]}
 do
 	echo "Computation $index result - > ${Computation[$index]} "
+	array+=(${Computation[$index]})
 done
+echo "Dictionary Values are stored in array"
+echo ${array[*]}
